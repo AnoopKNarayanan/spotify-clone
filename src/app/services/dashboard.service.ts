@@ -2,17 +2,16 @@ import { Injectable } from '@angular/core';
 import { Section, SectionItem } from '../models/dashboard';
 import { HttpClient } from '@angular/common/http';
 import { Observable, map } from 'rxjs';
-import { ConfigService } from './config.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class DashboardService {
 
-  constructor(private http: HttpClient, private configService: ConfigService) { }
+  constructor(private http: HttpClient) { }
 
   getData(): Observable<any>{
-    const url = this.configService.getDashboardUrl();
+    const url = 'https://api.npoint.io/5dfa3e388a9ca4b01661';
     return this.http.get(url).pipe(
       map(resp => {
         return resp;
