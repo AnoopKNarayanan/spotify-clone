@@ -1,0 +1,237 @@
+#top-bar {
+    position: fixed;
+    /* background-color: var(--background-base);
+    background-color: transparent;*/
+    top: 8px;
+    left: calc(var(--navbar-width) + 18px);
+    overflow: hidden;
+    right: 8px;
+    /* -webkit-transition: background-color .25s;
+    transition: background-color .25s; */
+    z-index: 1;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    padding: 16px 24px;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    -webkit-padding-end: 16px;
+    align-items: center;
+    display: flex;
+    height: var(--header-height);
+    justify-content: space-between;
+    width: auto;
+    z-index: 10;
+    justify-content: flex-end;
+}
+
+.scroll-top {
+    background-color: transparent;
+}
+
+.scroll-down {
+    background-color: var(--background-base);
+    -webkit-transition: background-color 0.3s linear;
+    -ms-transition: background-color 0.3s linear;
+    transition: background-color 0.3s linear;
+}
+
+.upgrade-btn {
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+    font-size: 0.8125rem;
+    font-weight: 700;
+    font-family: var(--font-family,CircularSp,CircularSp-Arab,CircularSp-Hebr,CircularSp-Cyrl,CircularSp-Grek,CircularSp-Deva,var(--fallback-fonts,sans-serif));
+    border: 0px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    text-transform: none;
+    transition-duration: 33ms;
+    transition-property: background-color, border-color, color, box-shadow, filter, transform;
+    user-select: none;
+    vertical-align: middle;
+    transform: translate3d(0px, 0px, 0px);
+    min-inline-size: 0px;
+    align-self: center;
+    white-space: nowrap;
+    -webkit-tap-highlight-color: transparent;
+    position: relative;
+    background-color: var(--background-base,#ffffff);
+    color: var(--text-base,#000000);
+    border-radius: 500px;
+    min-block-size: 32px;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    padding-block: 4px;
+    padding-inline: 16px;
+}
+
+.install-btn {
+    font-size: 0.875rem;
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+    font-size: 0.8125rem;
+    font-weight: 700;
+    font-family: var(--font-family,CircularSp,CircularSp-Arab,CircularSp-Hebr,CircularSp-Cyrl,CircularSp-Grek,CircularSp-Deva,var(--fallback-fonts,sans-serif));
+    border: 0px;
+    border-radius: 500px;
+    cursor: pointer;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    text-transform: none;
+    touch-action: manipulation;
+    transition-duration: 33ms;
+    transition-property: background-color, border-color, color, box-shadow, filter, transform;
+    user-select: none;
+    vertical-align: middle;
+    transform: translate3d(0px, 0px, 0px);
+    min-inline-size: 0px;
+    align-self: center;    
+    -webkit-tap-highlight-color: transparent;
+    background-color: var(--background-base,rgba(0,0,0,0.54));
+    color: var(--text-base,#ffffff);
+    border-radius: 500px;
+    min-block-size: 32px;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    padding-block: 4px;
+    padding-inline: 10px 15px;
+    font-weight: 700;    
+}
+
+.install-wrapper {
+    display: flex;
+    line-height: 1rem;
+}
+
+.install-wrapper .svg-fill {
+    margin-right: 5px;
+}
+
+.nav-btns {
+    display: flex;
+    justify-content: left;
+    position: absolute;
+    left: 24px;
+}
+
+.nav-btn {
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    background-color: rgba(0,0,0,.7);
+    border: none;
+    border-radius: 50%;
+    color: #fff;
+    cursor: pointer;
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    height: 32px;
+    justify-content: center;
+    position: relative;
+    width: 32px;
+}
+
+#fwd-button {
+    margin-left: 8px;
+}
+
+.user-btn {
+    background-color: var(--background-base)!important;
+    flex-shrink: 0;
+    pointer-events: auto;
+    white-space: nowrap;
+    -webkit-tap-highlight-color: transparent;
+    font-size: 1rem;
+    font-weight: 700;
+    font-family: var(--font-family,CircularSp,CircularSp-Arab,CircularSp-Hebr,CircularSp-Cyrl,CircularSp-Grek,CircularSp-Deva,var(--fallback-fonts,sans-serif));
+    border: 0px;
+    border-radius: 500px;
+    cursor: pointer;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    text-transform: none;
+    touch-action: manipulation;
+    transition-duration: 33ms;
+    transition-property: background-color, border-color, color, box-shadow, filter, transform;
+    user-select: none;
+    vertical-align: middle;
+    transform: translate3d(0px, 0px, 0px);
+    color: var(--text-subdued,#6a6a6a);
+    min-inline-size: 0px;
+    padding: 0px;
+    display: inline-flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+}
+
+.user-wrapper {
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    align-items: center;
+    background-color: transparent;
+    border-radius: 50%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    height: 100%;
+    justify-content: center;
+    padding-bottom: 2px;
+    width: 100%;
+}
+
+.user-fig {
+    width: 32px; 
+    height: 32px;
+}
+
+.my-icon {
+    position: relative;
+    border: 3px solid var(--essential-positive);
+    height: 2.5rem;
+    width: 2.5rem;
+    border-radius: 50%;
+    justify-content: center;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    color: #fff;
+    font-size: 0.875rem;
+    text-decoration: none;
+    box-shadow: 0 0 .5rem var(--cl-blue);
+    overflow: hidden;
+    z-index: 1;
+    background: var(--essential-positive);
+    font-weight: 400;
+}
+
+/* Breakpoints */
+
+@media only screen and (max-width: 760px) {
+    #top-bar {
+        position: sticky;
+    }
+
+    .scroll-top {
+        background-color: var(--background-base);
+    }
+}

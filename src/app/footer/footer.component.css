@@ -1,0 +1,61 @@
+#sections p {
+    color: rgb(255, 255, 255);
+    font-size: 1rem;
+    font-weight: 700;
+    font-family: var(--font-family,CircularSp,CircularSp-Arab,CircularSp-Hebr,CircularSp-Cyrl,CircularSp-Grek,CircularSp-Deva,var(--fallback-fonts,sans-serif));
+}
+
+.link-text {
+    margin-block: 0px;
+    font-size: 1rem;
+    font-weight: 400;
+    font-family: var(--font-family,CircularSp,CircularSp-Arab,CircularSp-Hebr,CircularSp-Cyrl,CircularSp-Grek,CircularSp-Deva,var(--fallback-fonts,sans-serif));
+    padding-block-end: 8px;
+    color: var(--text-subdued,#6a6a6a);
+}
+
+.link-text:hover {
+    color: #fff;
+    text-decoration: underline;
+}
+
+.footer-hr {
+    border-top: var(--bs-border-width) var(--bs-border-style) rgba(255, 255, 255, 0.1)!important;
+}
+
+.social-link {
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    display: inline-flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;
+    background-color: rgb(41, 41, 41);
+    cursor: default;
+    -webkit-box-align: center;
+    align-items: center;
+    color: var(--text-base,#000000);
+    position: relative;
+}
+
+.social-link:hover {
+    background-color: rgb(114, 114, 114);
+}
+
+.footer-links {
+    width: 100%;
+}
+
+.footer-links a, p {
+    text-decoration: none;
+    color: var(--text-subdued,#6a6a6a);
+    font-size: 0.875rem;
+    font-weight: 400;
+    font-family: var(--font-family,CircularSp,CircularSp-Arab,CircularSp-Hebr,CircularSp-Cyrl,CircularSp-Grek,CircularSp-Deva,var(--fallback-fonts,sans-serif));
+}
+
+.footer-links a:hover {
+    color: #fff;
+}

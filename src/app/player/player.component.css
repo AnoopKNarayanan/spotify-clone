@@ -1,0 +1,222 @@
+#now-playing-bar {
+    width: 100%;
+    z-index: 9;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    /* background-color: var(--background-base); */
+    background-color: transparent;
+    flex-direction: column;
+    height: auto;
+    min-width: 620px;
+    user-select: none;
+    position: fixed;
+    bottom: 0%;
+    color: white;
+}
+
+.player-wrapper {
+    height: 6rem;
+    padding-inline-end: 0;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 16px;
+    flex-wrap: nowrap;
+}
+
+.track-img-wrapper {
+    width: 56px;
+    height: 56px;
+    border: 0;
+    border-radius: 4px;
+    box-shadow: 0 0 10px rgba(0,0,0,.3);
+    display: block;
+    margin: 0;
+    z-index: 0;
+}
+
+.track-img {
+    background-color: #000;
+    background-position: 50%;
+    background-repeat: no-repeat;
+    background-size: contain;
+    border-radius: inherit;
+    left: 0;
+    position: relative;
+    top: 0;
+    object-fit: cover;
+    object-position: center center;
+    height: inherit;
+    width: inherit;
+}
+
+.track-name {
+    font-size: 0.875rem;
+    color: #fff;
+    font-weight: 400;
+    font-family: var(--font-family,CircularSp,CircularSp-Arab,CircularSp-Hebr,CircularSp-Cyrl,CircularSp-Grek,CircularSp-Deva,var(--fallback-fonts,sans-serif));
+    cursor: pointer;
+}
+
+.track-name:hover {
+    text-decoration: underline;
+}
+
+.track-artist {
+    color: #b3b3b3;
+    font-size: 0.6875rem;
+    font-weight: 400;
+    font-family: var(--font-family,CircularSp,CircularSp-Arab,CircularSp-Hebr,CircularSp-Cyrl,CircularSp-Grek,CircularSp-Deva,var(--fallback-fonts,sans-serif));
+    cursor: pointer;
+}
+
+.track-artist:hover {
+    text-decoration: underline;
+    color: #fff;
+}
+
+.play-btn {
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    align-items: center;
+    background-color: #fff;
+    border: none;
+    border-radius: 50%;
+    color: #000;
+    display: flex;
+    height: 32px;
+    justify-content: center;
+    min-width: 32px;
+    position: relative;
+    transition: none 33ms cubic-bezier(.3,0,.7,1);
+    transition-property: all;
+    width: 32px;
+    cursor: default;
+}
+
+.player-controls {
+    align-items: center;
+    justify-content: center;
+}
+
+.prog-bar{
+    align-items: center;
+    justify-content: center;
+}
+
+#trackProgress {
+    border-radius: 10px;
+    height: 0.25rem;
+    width: 35rem;
+    outline: none;
+    -webkit-appearance: none;
+    appearance: none;
+    overflow: visible;
+}
+
+#trackProgress::-webkit-slider-thumb {
+    width: 0.7rem;
+    -webkit-appearance: none;
+    height: 0.7rem;
+    background: #fff;
+    border-radius: 50%;
+    opacity: 0;
+}
+
+#trackProgress {
+    -webkit-appearance: none;
+    appearance: none;
+    background-color: hwb(0 100% 0% / 0.3);
+}
+
+#trackProgress:hover::-webkit-slider-thumb {
+    opacity: 1;
+}
+
+.duration {
+    -webkit-tap-highlight-color: transparent;
+    font-size: 0.6875rem;
+    font-weight: 400;
+    font-family: var(--font-family,CircularSp,CircularSp-Arab,CircularSp-Hebr,CircularSp-Cyrl,CircularSp-Grek,CircularSp-Deva,var(--fallback-fonts,sans-serif));
+    color: var(--text-subdued,#6a6a6a);
+}
+
+#volume {
+    border-radius: 10px;
+    height: 0.25rem;
+    outline: none;
+    -webkit-appearance: none;
+    appearance: none;
+    overflow: visible;
+}
+
+#volume::-webkit-slider-thumb {
+    width: 0.7rem;
+    -webkit-appearance: none;
+    height: 0.7rem;
+    background: #fff;
+    border-radius: 50%;
+    opacity: 0;
+}
+
+#volume {
+    -webkit-appearance: none;
+    appearance: none;
+    background-color: #fff;
+}
+
+#volume:hover::-webkit-slider-thumb {
+    opacity: 1;
+}
+
+#volume:hover {
+    background-color: #1db954;
+}
+
+.controls {
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.svg-fill {
+    color: hsla(0,0%,100%,.7);
+}
+
+.svg-fill:hover {
+    color: #fff;
+}
+
+.play-btn svg {
+    color: #fff;
+}
+
+.play-btn:hover {
+    -webkit-transform: scale(1.06);
+    transform: scale(1.06);
+    -webkit-transition: none 33ms cubic-bezier(.3,0,0,1);
+    transition: none 33ms cubic-bezier(.3,0,0,1);
+    -webkit-transition-property: all;
+    transition-property: all;
+}
+
+@media only screen and (max-width: 760px) {
+    #now-playing-bar {
+        background-color: var(--background-base);
+    }
+
+    .track-img-wrapper {
+        box-shadow: none;
+    }
+
+    .play-bar {
+        position: absolute;
+        bottom: 4%;
+        left: 0;
+    }
+
+    .play-btn {
+        position: absolute;
+        left: 50%
+    }
+}

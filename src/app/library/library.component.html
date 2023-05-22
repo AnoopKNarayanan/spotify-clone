@@ -1,0 +1,68 @@
+<div id="library" class="flex-column align-items-stretch flex-shrink-0 encore-dark-theme d-none d-lg-flex d-md-flex" *ngIf="data">
+    <div class="align-items-center flex-shrink-0 text-decoration-none lib-link row">
+        <button class="lib-btn col-md-4 col-lg-6 ms-1" data-bs-toggle="tooltip" data-bs-placement="top" title="Collapse Your Library">
+            <span aria-hidden="true" class="icon-wrapper">
+                <svg role="img" height="24" width="24" aria-hidden="true" viewBox="0 0 24 24" data-encore-id="icon" class="svg-fill">
+                    <path d="M3 22a1 1 0 0 1-1-1V3a1 1 0 0 1 2 0v18a1 1 0 0 1-1 1zM15.5 2.134A1 1 0 0 0 14 3v18a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V6.464a1 1 0 0 0-.5-.866l-6-3.464zM9 2a1 1 0 0 0-1 1v18a1 1 0 1 0 2 0V3a1 1 0 0 0-1-1z"></path>
+                </svg>
+            </span>
+          <span class="fw-semibold">Your Library</span>
+        </button>
+        <button class="lib-ctrl-btn add-btn col-md-2" data-bs-toggle="tooltip" data-bs-placement="top" title="Create playlist or folder">
+            <span aria-hidden="true">
+                <svg role="img" height="16" width="16" aria-hidden="true" viewBox="0 0 16 16" data-encore-id="icon" class="svg-fill">
+                    <path d="M15.25 8a.75.75 0 0 1-.75.75H8.75v5.75a.75.75 0 0 1-1.5 0V8.75H1.5a.75.75 0 0 1 0-1.5h5.75V1.5a.75.75 0 0 1 1.5 0v5.75h5.75a.75.75 0 0 1 .75.75z"></path>
+                </svg>
+            </span>
+        </button>
+        <button class="lib-ctrl-btn col-md-2" data-bs-toggle="tooltip" data-bs-placement="top" title="Enlarge Your Library">
+            <span aria-hidden="true">
+                <svg role="img" height="16" width="16" aria-hidden="true" viewBox="0 0 16 16" data-encore-id="icon" class="svg-fill">
+                    <path d="M7.19 1A.749.749 0 0 1 8.47.47L16 7.99l-7.53 7.521a.75.75 0 0 1-1.234-.815.75.75 0 0 1 .174-.243l5.72-5.714H.75a.75.75 0 1 1 0-1.498h12.38L7.41 1.529a.749.749 0 0 1-.22-.53z"></path>
+                </svg>
+            </span>
+        </button>
+        <div class="row">
+          <div class="col-md-6 ms-1 mt-2">
+            <button class="artist-btn">
+              <span class="artist-label">
+                Artists
+              </span>
+            </button>
+          </div>
+        </div>
+    </div>
+    <div class="list-group list-group-flush scrollarea" (mouseenter)="showScrollbars($event)" (mouseleave)="hideScrollbars($event)">
+      <div class="row artist-filter-bar">
+        <button class="lib-ctrl-btn col-md-2" data-bs-toggle="tooltip" data-bs-placement="top" title="Search in Your Library">
+          <span aria-hidden="true">
+            <svg role="img" height="16" width="16" aria-hidden="true" class="svg-fill" viewBox="0 0 16 16" data-encore-id="icon">
+              <path d="M7 1.75a5.25 5.25 0 1 0 0 10.5 5.25 5.25 0 0 0 0-10.5zM.25 7a6.75 6.75 0 1 1 12.096 4.12l3.184 3.185a.75.75 0 1 1-1.06 1.06L11.304 12.2A6.75 6.75 0 0 1 .25 7z"></path>
+            </svg>
+          </span>
+      </button>   
+      <div class="dropdown col-md-4 me-2 recent">
+        <button class="btn dropdown-toggle recent-btn" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">
+          Recents
+        </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
+          <span class="dropdown-header">Sort by</span>
+          <a class="dropdown-item" href="#" *ngFor="let sortOrder of data.sortOrders" [ngClass]="{'active': sortOrder.isSelected}">{{sortOrder.name}}</a>          
+          <!-- <a class="dropdown-item active" href="#">Recents</a>
+          <a class="dropdown-item" href="#">Recently Added</a>
+          <a class="dropdown-item" href="#">Alphabetical</a>
+          <a class="dropdown-item" href="#">Creator</a> -->
+        </div>
+      </div>     
+      </div>
+      <a href="#" class="list-group-item list-group-item-action active py-3 lh-tight" aria-current="true" *ngFor="let artist of data.artists">
+        <div class="d-flex w-100 align-items-center ">
+          <div class="artist-img d-flex me-3"><img [src]="artist.imgUrl" alt=""></div>
+          <div class="d-flex flex-column">
+            <strong>{{artist.name}}</strong>
+            <div class="small artist-sub-text">Artist</div>
+          </div>
+        </div>        
+      </a>
+    </div>
+  </div>

@@ -1,0 +1,32 @@
+<app-header [isTop]="isTop"></app-header>
+<div class="root encore-dark-theme">
+    <div #pageWrapper class="page-wrapper" *ngIf="data" (scroll)="onScroll()" (mouseenter)="showScrollbars($event)" (mouseleave)="hideScrollbars($event)">
+        <!-- <div class="top-bg"></div> -->
+        <section class="dash-sections mb-5" *ngFor="let section of data">
+            <span class="section-title overflow d-flex mb-3"><a href="#">{{section.title}}</a></span>
+            <div class="row row-cols-1 row-cols-md-4 g-4 gap-4 flex-nowrap overflow-auto">
+                <div class="col" *ngFor="let sectionItem of section.sectionItems.slice(0, 5)">
+                    <div class="card">
+                        <img src="{{sectionItem.coverImg}}" [ngClass]="{'card-img-top': sectionItem.typeName != 'Artist', 'card-img-circle': sectionItem.typeName == 'Artist'}" alt="...">
+                        <div class="card-img-overlay" *ngIf="sectionItem.subImg">
+                            <img src="{{sectionItem.subImg}}" class="card-sub-img" alt="...">
+                        </div>
+                        <div class="play" *ngIf="!sectionItem.subImg">
+                            <span class="encore-bright-accent-set play-wrapper">
+                                <svg role="img" height="24" width="24" aria-hidden="true" viewBox="0 0 24 24" data-encore-id="icon" class="Svg-sc-ytk21e-0 ldgdZj">
+                                    <path d="m7.05 3.606 13.49 7.788a.7.7 0 0 1 0 1.212L7.05 20.394A.7.7 0 0 1 6 19.788V4.212a.7.7 0 0 1 1.05-.606z"></path>
+                                </svg>
+                            </span>                            
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title overflow">{{sectionItem.name}}</h5>
+                            <p *ngIf="sectionItem.relDate && sectionItem.duration" class="card-text">{{sectionItem.relDate | date: 'MMM dd'}} · {{sectionItem.duration}} min</p>
+                            <p *ngIf="!sectionItem.relDate" class="subText" [innerHTML]="sanitizer.bypassSecurityTrustHtml(sectionItem.subText)"></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <app-footer></app-footer>
+    </div>
+</div>
