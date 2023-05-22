@@ -1,4 +1,4 @@
-import { APP_INITIALIZER, NgModule } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http'
 
@@ -27,14 +27,7 @@ import { ConfigService } from './services/config.service';
     AppRoutingModule,
     HttpClientModule
   ],
-  providers: [
-    { 
-      provide : APP_INITIALIZER, 
-      multi : true, 
-       deps : [ConfigService], 
-       useFactory : (configService : ConfigService) =>  () => configService.loadAppConfig()
-    }
-  ],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
